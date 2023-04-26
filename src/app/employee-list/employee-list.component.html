@@ -1,0 +1,51 @@
+ <div class="card my-5">
+    <div class="card-body">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Search by ID">
+      <div *ngFor="let employee of filteredEmployees">
+        <!-- display employee information -->
+      </div>
+      
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id
+            </th>
+            <th scope="col">firstName</th>
+            <th scope="col">lastName</th>
+            <th scope="col">contactEmail</th>
+            <th scope="col">companyEmail</th>
+            <th scope="col">birthDate</th>
+            <th scope="col">hiredDate</th>
+            <th scope="col">address</th>
+            <th scope="col">role</th>
+            <th scope="col">businessUnit</th>
+            
+          
+
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees ">
+            <td>{{ employee.id }}
+              <button (click)="onDelete(employee.id)">Delete</button>
+              
+            </td>
+            <td>{{ employee.firstName }}</td>
+            <td>{{ employee.lastName }}</td>
+            <td><a href="mailto:{{ employee.contactEmail }}">{{ employee.contactEmail }}</a></td>
+            <td>{{ employee.companyEmail }}</td>
+            <td>{{ employee.birthDate }}</td>
+            <td>{{ employee.hiredDate }}</td>
+            <td>{{ employee.address.street}} <br> {{employee.address.suite}} <br> {{employee.address.city}}, {{employee.address.region}}  {{employee.address.postal}} <br> {{employee.address.country}} </td>
+            <td>{{ employee.role }}</td>
+            <td>{{ employee.businessUnit }}</td>
+            
+              
+
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
